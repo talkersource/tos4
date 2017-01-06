@@ -1,0 +1,5 @@
+Usage:  ~FG.idle <user>/all
+
+This command displays the total idle time and the total connection
+time of any user connected.  Using the "all" switch displays info
+on every user.

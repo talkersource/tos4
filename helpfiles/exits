@@ -1,0 +1,6 @@
+Usage:  ~FG.exits
+
+This command will list the exits from your current room.  They
+are also listed in the .look command, but this one does not
+page out the room descriptions, etc.  Pueblo users can easily
+click the room exits (non-private and non-link) to go to them.

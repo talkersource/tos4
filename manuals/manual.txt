@@ -1,0 +1,817 @@
+T a l k e r O S    version 4.03, revision A                    Public Release
+=============================================================================
+                   Installation, Setup, and User's Manual
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ NOTE:  See the individual helpfiles for instructions on individual commands.
+=============================================================================
+
+        TABLE OF CONTENTS
+        -----------------
+            i. Introduction
+           ii. A Breif History of TalkerOS
+
+            Section A - Setup and Installation
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            1. Uncompressing and Unarchiving the Files
+            2. Learning the File System
+            3. Setting Up TalkerOS for the First Time
+            4. Compiling TalkerOS into an Executable
+
+            Section B - General Operation and Maintanance
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            5. The .system Command and its Uses
+            6. Security Issues (firewall, banning, etc.)
+            7. System Logging
+            8. Online Utilities
+            9. System Debugger
+
+            Section C - Adding Functions through Plugins
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           10. The Purpose of Plugins
+           11. Technical Differences Between 'Hard-code' and Plugins
+           12. Adding Plugins to your TalkerOS System
+           13. Removing Plugins from TalkerOS
+           14. Troubleshooting Plugins
+
+            Appendix A - Userfile Format
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Appendix B - NUTS Color Codes
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   i. INTRODUCTION
+      ------------
+      "Congratulations on the purchase of your new Talker..." I don't think
+      so.  If you purchased this code, you were ripped off and it was
+      illegal of the person selling it to do so.  So let me begin with the
+      following statement:
+
+         TalkerOS is based on the NUTS 3.3.3 talker code by Neil Robertson
+         which is copyrighted by himself, and under the copyright, it is
+         illegal to sell the code or claim it as your own. The author of
+         TalkerOS does not claim in any way (stated or implied) that the
+         NUTS code is his.  He does, however, claim all rights on the
+         modifications TO the NUTS code that make up TalkerOS.
+
+     TalkerOS modifications (c)1998 by William Price.  All rights reserved.
+
+      With that out of the way, I may now formally congratulate you on
+      the successful DOWNLOAD of your FREE copy of TalkerOS version 4.03.
+      This is the first ever public release of TalkerOS, and a breif
+      history follows this introduction.  This code is designed to be
+      very powerful, modular, expandable, and still be easy to use.
+      This document will detail most of the information you need to know
+      in order to get installed, set up, and running.  There are other
+      documentation files, and it is recommeneded that you read those in
+      their entirety as well.
+
+
+  ii. A BREIF HISTORY OF  T a l k e r O S
+      -----------------------------------
+      TalkerOS started in May of 1997 as an experiment.  It grew from
+      version 1.0 to 3.3 in an effort to create a "neat" talker code as
+      things go.  It was then scrapped and hidden away in some unknown
+      sectors on the author's hard drive.  The author decided that
+      version 3.3 was an utter disgrace and shoved his head in a paper
+      bag until he realized what he could do.  And thus, the idea for
+      TalkerOS 4.0 was born seven months later.  (Why am I speaking
+      about myself in third-person?)  I then set about the task of planning
+      out what was to hopefully be one of the best talker codes available
+      for free on the 'Net.  I took the original, unmodified version
+      of NUTS 3.3.3 and followed a plan--something v3.3 lacked.  Going
+      through line by line, I thought of what could make each function
+      better.  In the end, I found that I had modified nearly every
+      single function in the original code, and added plenty of custom
+      additions myself.  The result is what sits before you... or rather
+      in another file nearby.  TalkerOS 4.0 was a new generation of
+      talkers, at least in my humble opinion.  It offers the ease of
+      setup, ease of operation, and ease of expandibility that is not
+      found in any other talker.  The reason for this is simple.  Most
+      talkers are designed to be "cool," or "neat," or have lots of
+      commands.  If they ever are released publicly, it's an after-
+      thought.  TalkerOS started out from day one to eventually be
+      available to the public.  With this in mind, everything was
+      redesigned and created to be as easy to set up as possible, while
+      still being a powerful NUTS-based talker that users would be
+      able to recognize quickly and need little adaptation.
+    
+      The heart of TalkerOS is its "system code" which all-in-all doesn't
+      consist of much.  It performs a few boot checks and initializes
+      components, but other than that it's pretty lame.... UNTIL the
+      TalkerOS Plugin Standard came along.  Now there was an easy way
+      to add features and capabilities to ANY TalkerOS system with little
+      more than 3 lines of code.  Authors could now write commands and
+      modifications that the system could instantly use, without the
+      trouble of porting the code to an incompatible talker or having
+      to troubleshoot.  As far as I know, TalkerOS is the only code that
+      supports such a powerful plugin system with few boundaries.  Plugins
+      can be written for BOTs, commands, games, utilities, and more.
+     
+      In the final months of testing and development, I had many people
+      asking for copies of the code.  Version 4.00 went under development
+      and testing for seven months before v4.01 was released to the public.
+      Now, with the public release available, I have started working on
+      the next two versions:  4.1 and 4.2.
+
+
+		ADDENDUM:  Versions 4.x have been canceled
+			   in favor of the immediate start
+			   of development on version 5.00.
+
+ ----------------------------------------------
+  S e c t i o n   A  -  Setup and Installation
+ ----------------------------------------------
+
+   1. UNCOMPRESSING and UNARCHIVING the FILES
+      ---------------------------------------
+      Normally, reading this file means that you have already uncompressed
+      and unarchived the TOS403.TAR.GZ file.  Since I will be making the
+      documentation available separately, though, I will go over how to do
+      this.  If you have already uncompressed the file, skip to section two.
+
+      All documentation, code, and support files come in one nice little
+      virtual package.  It's a G-Zipped TAR file.  You will usually need
+      a special program to uncompress the GZIP, and another to un-TAR.
+      If you have access to a UNIX shell account, both of these options
+      are available.  Login to your UNIX shell account and follow the
+      procedures below:
+
+      - Use the 'cd ~' command to enter your home directory
+
+      - Use the 'cp <old_location>/tos403.tar.gz .' command to copy the
+        file to the new directory if it is on your UNIX account.  If it
+        is not yet on your unix account, use an FTP program to download
+        it from the TalkerOS website in to your directory.
+
+      - Use the following command to decompress the TAR archive:
+
+                             gzip -d tos403.tar.gz
+
+        Once finished, a new file will be created, named 'tos403.tar'.
+        This is the TAR archive that contains the actual TalkerOS files.
+
+      - Use the following command to un-archive the TAR file and install
+        all the files to your UNIX account.  This will create directories
+        as well:
+                              tar -xvf tos403.tar
+
+      - The TAR program will automatically install all the necessary files
+        into the default directory:  ./tos4    If, however, you wish to
+        use a different name for your TalkerOS directory, use the
+	following command:
+
+			     mv ./tos4 ./<new name>
+
+      Once this is complete, you have successfully installed the required
+      files for operating a TalkerOS talker.
+
+
+   2. LEARNING THE FILE SYSTEM
+      ------------------------
+      The TalkerOS program uses both files and directories to store its
+      information.  There are six subdirectories that TalkerOS uses
+      in the directory it was installed in.  These are listed below along
+      with their function:
+
+           DATAFILES - Contains system configuration, room descriptions,
+                       and room/system message boards.
+
+           USERFILES - Contains the data, profiles, internal mail, and
+                       personal room descriptions for each individual
+                       user.
+
+           HELPFILES - Contains the online help documentation to help
+                       both users and admins with command operations.
+
+           MAILSPOOL - Contains spooled mail files to be sent out over
+                       the netlink(s) to other talkers.
+
+            BOTFILES - Contains the bot information files and the
+                       trigger response files for the TalkerBOTs.
+
+             PLUGINS - Contains the plugin code and support files, as
+                       well as other plugin-related data.
+
+      Other files include the main code file (tos403.c), the system
+      header (tos403.h), the system security setup (security.h), the
+      system configuration file (datafiles/config), the TalkerOS
+      features setup file (tos4setup.h), the pueblo jukebox setup
+      file (music.h), and finally the command setup file (commands.h).
+
+
+   3. SETTING UP TalkerOS for the FIRST TIME
+      --------------------------------------
+      TalkerOS is quite easy to configure, but in order to make it as
+      customizable as possible, there are many options to set.  Your
+      copy of TalkerOS came with the defaults already set for you, but
+      there are still some settings that need to be made.
+
+      NOTE: See the NUTS documentation file 'config.txt' for info
+            on setting up the 'datafiles/config' file.  This file
+            configures the main portion of the talker, the rooms,
+            and the netlink.
+
+      IMPORTANT NOTE:  The TalkerOS firewall must be initialized if you
+                       plan to use it!  Read the file FIREWALL.TXT for
+                       information on setting up the security system!!
+
+      The other main configuration settings are in the file 'tos4setup.h'.
+      The items (in order) are listed below along with tips and hints.
+
+      SYSTEM INFORMATION
+                Talker's Name - Set this to the name that you choose for
+                                your talker.
+
+                Serial Number - A serial number will be assigned to you
+                                when you register via e-mail.  Although
+                                this is not needed yet, it will be in
+                                future versions.
+
+             Registered User - This will also be sent to you when you
+                               register via e-mail.  It is usually your
+                               email id.  ex:  myname (@my.host.com)
+
+                  Server DNS - Set this to the DNS of your UNIX server.
+                               A DNS looks like:   host.com
+
+                   Server IP - Set this to the IP of your UNIX server.
+                               An IP looks like:   207.96.47.213
+
+              Talker's Email - Set this to the e-mail address you want
+                               displayed to your users.
+
+            Talker's Website - Set this to the URL of the talker's
+                               homepage (if any) that you want displayed
+                               to your users.  If you plan to use Pueblo
+                               multimedia enhancements, this information
+                               MUST be set.
+
+             Sysop Real Name - Set this to the full name of the talker's
+                               owner.  It can be omitted for privacy.
+
+              Sysop Username - Set this to the username of the talker's
+                               owner.  It can be omitted for privacy.
+                               If this matches the Real Name, the real
+                               name will not be displayed in .tinfo
+
+              Pueblo Web Dir - Set this to the subdirectory of the
+                               talker's website that will contain the
+                               multimedia sound and picture files that
+                               the talker should use for Pueblo users.
+
+      LEVEL and RANKING SETUP
+                Set these seven(7) words to the names of the ranks for
+                your talker.  The order (left to right) is from least
+                to greatest.  The 7th entry is the name for the Bot
+                level.  The LAST entry should ALWAYS be a *.
+
+      ADDITIONAL LEVEL INFORMATION
+                Using lev_req[] and lev_desc[] you can enter a short
+                (22 character) description of each level, and a short
+                ("     "     ) description of the level's requirements,
+                respectively.
+
+      PUEBLO ENHANCEMENT SETUP
+                These three options allow you to specify your Pueblo
+                mode.  If you do not wish to offer (or bother with)
+                multimedia, set the PUEBLO_ENH to zero(0), or to one(1)
+                if you do.
+
+      MAP SETUP
+                TalkerOS supports multiple map files--files with a
+                listing of all the rooms and how to get between them.
+                If you want to use only one, set it to 1, otherwise,
+                set it to the number of map files you wish to use.
+
+      SWEAR WORD SETUP
+                NUTS v3.3.3 includes a feature to "ban" offensive words
+                if you choose.  The array *swear_words[] contains a list
+                of words that you wish to ban.  If you do not want to
+                have a word ban, this feature may be disabled in your
+                config file.  Any words you enter in this list MUST BE
+                LOWERCASE, and no matter what, there must be a * entered
+                as the last entry.
+
+      SYSTEM MESSAGE SETUP
+                This section has a list of system messages that you
+                may configure to better fit your talker's theme.  Please
+                note that many messages require you to put a newline at
+                the end of the message (\n).  Short descriptions of what
+                each message is for is placed to the left.
+
+      NEW ACCOUNTS SETUP
+                TalkerOS allows you to set different options to handle
+                what happens with new users...
+
+                REQ_READ_RULES - If set to one(1), users must read the
+                                 rules file (.rules) before they can
+                                 perform an account request (.accreq).
+
+                AUTOPROMOTE    - If set to one(1), users will be promoted
+                                 to level 1 automatically AFTER they
+                                 perform an account request (.accreq).
+
+                NONEWBIES      - If set to one(1), the system will not
+                                 allow new users to be created.  This
+                                 setting can be overrided using the .nonew
+                                 command inside the talker, but resets
+                                 every time the talker is rebooted.
+
+                SAVEACCTS     - If set to zero(0), the system will NOT
+                                save a userfile for new users (level 0).
+                                Once the user is promoted to level 1, the
+                                user data will be saved.  If set to one(1),
+                                the user's information will always be saved.
+
+      MODULAR COLORCODE ARRAY
+                This feature allows you to change most of your talker's
+                color scheme in one central location.  Enter the standard
+                colorcodes here for the corresponding items.
+
+      TALKERBOT SETUP
+                (see the file TALKERBOT.TXT for bot setup info.)
+
+
+   4. COMPILING TalkerOS into an EXECUTABLE
+      -------------------------------------
+      When all the files have been uncompressed, un-archived, and all
+      settings have been made, you need to compile your talker.  Compiling
+      makes the code into a form that the server can actually run.  This
+      is done using the UNIX command:  cc
+
+      SYNTAX:   cc <source filename> -o <executable filename>
+
+           The source filename for TalkerOS is:  tos403.c
+      The -recommended- executable filename is:  tos4
+
+      EXAMPLE:  cc tos403.c -o tos4
+
+      If there are any errors, they will be listed here.  However, if
+      you have not made any changes to the TalkerOS code, there should
+      not be any errors.  However, there may be problems with the data
+      you entered on part of the system setup.  If so, go back to the
+      lines that the compiler lists and look for problems such as a missing
+      ending quote (").
+
+	NOTE to RedHat users:   Some versions of RedHat Linux have an
+	~~~~~~~~~~~~~~~~~~~~~	incompatible STDIO.H file.  To work
+				around this issue, change the #include
+                                line in the TOS403.C file that reads
+				
+				#include <stdio.h>        to
+				#include "tos4_stdio.h"
+
+				Also, RedHat users will have to
+				use the  -lcrypt  option when
+				using CC to complile.
+
+
+      Once the compiler finishes without errors, all you have to do is
+      type the executable filename and press enter.  If you followed
+      the example above, all you have to type is:
+
+                       tos4   [enter]
+	RedHat users:  ./tos4 [enter]
+
+      The talker will then boot and you can login on the port that
+      you set.  Congratulations on your TalkerOS setup!
+
+      TalkerOS comes installed with one user with full access.
+
+		Username: admin
+		Password: setup
+
+	Be sure to delete this user or change it's password
+	once you have your own administration username!!!
+      
+
+ ---------------------------------------------------------
+  S e c t i o n   B  -  General Operation and Maintenance
+ ---------------------------------------------------------
+
+   5. THE .SYSTEM COMMAND and ITS USES
+      --------------------------------
+      The .system command provides an extremely large amount of informa-
+      tion about your TalkerOS system.  Information on system settings,
+      login statistics, and memory usage are all available through this
+      command.  The system command lists so much information that it
+      would be impossible to cover it all here, so only the most important
+      items will be covered.  Many of the items are self-explanitory so
+      you should have little trouble understanding the information.  If
+      possible, have the .system command's display on your screen while
+      following this guide--it will help you understand and become
+      more familiar with the command.
+
+      The first items are the process id (PID), boot time, uptime, and
+      system ports.  The PID is a number assigned by the UNIX operating
+      system to identify the program.  If the talker were to go "out of
+      control" for some reason, you might need to "kill" it from the
+      shell.  To do this, at the UNIX prompt you would type: kill <pid>
+      Note that the PID changes every time the talker is booted. The
+      boot time and uptime are self-explanitory--they list the time
+      and date that the program was booted and how long it has been
+      running continuously, respectively.  Finally, the system ports
+      list the port numbers that the talker is "listening" to.  The
+      MAIN port is the one that most users will use, the WIZ port is
+      an auxilliary port for your admins, and the LINK port is for
+      inter-talker connections.
+
+      Note your MINLOGIN level.  This specifies the required level that
+      users must ALREADY have to login.  Normally, this will be set to
+      'NONE,' meaning that anyone can login, even create new accounts.
+      If you need to keep someone from repeatedly making new accounts
+      or you're holding a wizard meeting, you can set this level higher.
+
+      If you have enabled timeouts for your users (to keep them from
+      idling and not doing anything), you can see the current time limits
+      here (in seconds.).
+
+      The level settings are very important--remote maxlevel, remote
+      default level, wizport minimum level, and gatecrash level.  The
+      remote maxlevel specifies the maximum level that someone from
+      another talker can have at your site.  The remote default level
+      specifies the default level that users from NUTS 3.2.x-based
+      talkers will have at your talker. These should NEVER be set
+      at a wizard/admin level for security reasons.  The wizport
+      minimum level should be set at whatever level you want to let
+      use the WIZ PORT.  Finally, the gatecrash level is a very
+      important setting.  Users at the gatecrash level can enter
+      private rooms without an invitation (not personal rooms) and
+      this can be very bad.  The usual setting for this is the HIGHEST
+      admin level, *or* the bot level.
+
+      The Message Lifetime setting specifies how long messages will
+      stay on your message boards before being automatically removed.
+      Lastly, the Object Memory Allocated gives you an idea of how
+      much memory your talker is currently using.  (Note: You can use
+      the .memory command to get more in-depth information about
+      memory usage.)
+
+
+   6. Security Issues (firewall, banning, etc.)
+      -----------------------------------------
+      NOTE: See the file FIREWALL.TXT for information on setting up
+            the TalkerOS proprietary firewall.
+
+      With the increase of "hackers" on the Internet these days, they
+      seem to love to target innocent, defenseless chat systems.  Most
+      likely, even your talker will be attacked at least once sooner or
+      later.  Also, users who visit your talker can sometimes get abusive
+      and you will need to remove them and keep them out.  TalkerOS
+      provides some features to help you maintain peace in your talker.
+
+      "Step 1" - FLC, POSSESS, MUZZLE
+
+           FLC - Stands for "Force LowerCase" and is used when a user
+                 constantly types in all UPPER CASE even after being
+                 told not to.  The FLC command automatically converts
+                 any and all uppercase letters to lowercase.
+
+           POSSESS - This little "annoyance" works the first or second
+                     time on troublemakers.  It reverses their text.
+
+           MUZZLE - This keeps the user from harrassing anyone.  They
+                    can no longer speak, shout, write messages, etc.
+
+      "Step 2" - KILL, MINLOGIN, NONEW
+
+           KILL - Does what it says--"kills" the user and removes him/her
+                  from your talker.  They get a nice little "connection
+                  lost" message.
+
+           MINLOGIN - This setting specifies the level that any user
+                      logging in MUST have in order to continue.  If
+                      their level is lower than MINLOGIN, they are
+                      denied access.
+
+           NONEW - This command keeps the talker from accepting new
+                   accounts... useful when a user keeps trying back with
+                   new names.
+
+      "Step 3" - BAN
+
+           BAN USER - You can ban an existing username from logging in.
+           BAN SITE - You can ban a site/ip from connecting to the talker.
+           BAN NEW  - You can ban a site/ip from making new accounts
+                      on the talker, but still allow existing users from
+                      the same site to continue logging in.
+
+           When banning sites, ban only the needed information.  Most
+           users' IPs/Sites change from day to day.  You want to ban
+           the information that locks their server out, not just the
+           site they happen to be connecting from that one day.
+
+           EXAMPLE:  If their site looks like:   ppp123.host.com
+                                Ban this site:         .host.com
+
+                       If their IP looks like:   207.157.37.4
+                                  Ban this IP:   207.157.37.
+
+      "Anti-Hacker Firewall"
+
+           If you choose to use the included firewall, you can add some
+           features that help deter so-called hackers.  The firewall
+           can be set to check names and/or sites of every user at or
+           above a certain level.  Users that are checked and verified
+           by the firewall are most-likely valid and it is difficult to
+           forge entry by "regular" means--EVEN IF THE ADMIN'S PASSWORD
+           IS KNOWN.  Please note, however, that if someone is dedicated
+           to breaking into your system, it can be done.  The firewall is
+           not 100% secure, but it is a good start, and well above most
+           other talker systems' security measures.
+
+
+   7. System Logging
+      --------------
+      TalkerOS keeps five(5) logs of system activity so you can monitor
+      the system, users, and unusual activity.  System logging can be
+      on or off by default (set in config) and it can be activated or
+      deactivated by an online command.  Logs can be viewed from the
+      UNIX shell, or from within the talker using the .viewlog command.
+
+      SYSTEM LOG - The system log records information on system boots,
+                   shutdowns, netlink activity, board checks, and other
+                   background information.
+
+      USER LOG   - The user log records information on user logins,
+                   logouts, promotions/demotions, muzzles, kills,
+                   bans, and other pertinent information.
+
+      ACCREQ LOG - The account request log is dedicated to keeping a
+                   list of users who executed the .accreq command.  It
+                   logs the time/date, username, and email address.
+
+    FIREWALL LOG - The firewall log keeps track of firewall violations.
+
+      BAN LOG    - The ban log retains information on bans, unbans,
+                   and attempts by banned users/sites.
+
+
+   8. Online Utilities
+      ----------------
+      There are multiple utilities built-in to the talker to make
+      administration easier.
+
+      .memory  - This command gives a more-detailed list of memory
+                 usage by your talker.
+
+      .delete  - This command will delete a user's account.
+
+      .settime - This command sets a user's total time.
+
+      .urename - This command renames a user and his/her files in
+                 one easy step. - The user must be logged in.
+
+      .recount - This command recounts all the message boards to
+                 make sure the count is correct.
+
+      .loadroom- This command will load a roomname that you specify
+                 into the TalkerOS dynamic room system.  The room
+                 will act just like a personal room and will be
+                 removed when empty.
+
+      .debugger- This command can activate modules that help find
+                 problems in TalkerOS.  (See SECTION B, #9)
+
+
+
+   9. System Debugger
+      ---------------
+      The TalkerOS Debugger helps you find problems in your talker
+      after making modifications and changes.  Features are activated
+      or deactivated using the .debugger command.  There is also a
+      related feature of the debugger.  The talker will attempt to
+      log the last user and his/her input to the syslog when a command
+      causes a system crash.
+
+           SYNTAX:   .debugger <module/option> [<parameters>]
+
+      commands - This debug module will list out all the available
+                 commands and their associations (nuts/tos/plugin).
+                 Helpful in checking for commands that don't show
+                 up or for crosslinked plugins.
+
+      input    - This high-level debug feature can log ALL INPUT
+                 recieved from ANY/ALL users to debug commands
+                 and feature additions.  This module can be a
+                 security/privacy risk, so there is an option
+                 to disable it in the TOS4SETUP.H file.
+
+      plugin   - This debug module lists all known information about
+                 any loaded plugin you choose.  The syntax is listed
+                 below.  To select which plugin to see information
+                 on, you must find it's index number from the .plugreg
+                 command.
+
+                      SYNTAX:  .debugger plugin <plugin position>
+
+
+ --------------------------------------------------------
+  S e c t i o n   A  -  Adding Functions through Plugins
+ --------------------------------------------------------
+
+  10. The Purpose of Plugins
+      ----------------------
+      All too often, coders write games, functions, and features for
+      a talker, and then decide to give them to another talker.  The
+      problem occurs when the second talker is slightly incompatible
+      with the first.  To get around this problem, TalkerOS employs
+      a standard set of rules for creating additions.  While traditional
+      means of adding functions can be used, when the Plugin standard
+      is utilized, the plugin can be exported to many other TalkerOS
+      systems with NO MODIFICATION NEEDED.  It's simple as that if the
+      plugin is written properly.
+
+      Plugins can be complex or simple.  Either way, it's relatively
+      easy to add them into your TalkerOS system.  Plugins can be
+      installed with as little as 2 lines of code; most require 3,
+      and some more-complex plugins can go to 4, 5, or more.  But
+      compared to ten, twenty, fifty or more lines traditionally,
+      it is a major improvement.
+
+
+  11. Technical Differences Between 'Hard-code' and Plugins
+      -----------------------------------------------------
+      In the traditional 'hard-coded' expansions of talker code, the
+      functions were inserted directly into the talker.  Commands were
+      added, and links in the familiar EXEC_COM() section had to be
+      made.  Conflicts sometimes arose from existing variables and
+      function differences.
+
+      In plugin-expansions, all the necessary code is done once by
+      the original programmer.  Unique function and variable names
+      are used to keep from conflicting with other plugins, and
+      all system calls are standardized.  When it comes time to
+      put them into the talker, it's as easy as one line to include
+      the code, another to initialize the plugin, and a third to
+      add commands for a plugin--one line can add ALL the commands
+      the plugin needs.  This simplicity and ease of expansion is
+      the difference between the "old" way and the new way of
+      TalkerOS plugins.
+
+
+  12. Adding Plugins to your TalkerOS System
+      --------------------------------------
+      Adding plugins is simple.  When you've downloaded a plugin, place
+      all it's files in your /plugins directory.  At the top of the .C
+      file of the plugin, it should list all the lines you need to add
+      and where they go.  There are three places in TalkerOS 4.03 that
+      you have to insert one of these lines; they're clearly marked by:
+
+                /* ---------------------------------------
+                    Begin PLUGIN INCLUDE code lines here. 
+                   --------------------------------------- */
+
+                /* --------------------------------------------------
+                   Place third-party plugin initialization calls HERE
+                   -------------------------------------------------- */
+
+                /* --------------------------------------------
+                    Put third-party plugin command calls here!
+                   -------------------------------------------- */
+
+      NOTE: Some complex plugins may require you to add lines into
+            structures in the TOS403.H file.  If so, they will list
+            instructions in a readme file, or at the top of the .C
+            file of the plugin.
+
+
+  13. Removing Plugins from TalkerOS
+      ------------------------------
+      This is the easiest part of Plugins... remove the lines that
+      you inserted.  Use SECTION B, #12 as a guide, and reverse the
+      process.  Go to each section and remove the plugin's corresponding
+      line.
+
+
+  14. Troubleshooting Plugins
+      -----------------------
+      TalkerOS does -NOT- support third-party plugins.  If the plugin
+      author lists contact information, please talk to the author if
+      a specific problem occurs with their plugin.  You can use the
+      debugger to help find information to solve the conflict.
+
+
+
+ ----------------------------------------
+  A p p e n d i x  A  -  Userfile Format
+ ----------------------------------------
+
+   User file format and layout guide.
+
+   NOTE:  This guide is applicable ONLY to version 4.02 or 4.03 with
+          a RUNTIME version of "402" or "403" respectively.  Any other
+          version(s) may not comply and/or run with this format.
+   ===============================================================
+        
+   <runtime version>
+   <password>
+   <last login> <total time> <last length> <mail read time> <date created>
+   <level> <muzzled> <arrested> <possessed> <can edit room descriptions>
+   <prompt> <charecho> <mode> <color> <wizduty> <visibility>
+   <gender> <age> <private stats> <audio prompt> <audio pager> <prompt gender>
+   <last site connected from>
+   <description>
+   <in phrase>
+   <out phrase>
+   <personal room topic>
+   <email address>
+   <website address>
+
+   ===============================================================
+   Manual modification of the userfiles is not recommended.  However, it
+   may become necessary, so this guide is provided.  Also the ability to
+   edit regular room descriptions must be set MANUALLY from the shell.
+   Find the <can edit room descriptions> option and change from 0 to 1
+   to allow someone this capability.
+
+    VERY IMPORTANT!!!
+    -----------------
+    NEVER CHANGE the runtime version that is written on the first
+    line of each userfile. This number is used by the talker to
+    determine whether the userfile is compatible or not.  If it is
+    altered, a segmentation fault may occur.  Or the user might
+    not be allowed to login.  Old userfiles will AUTOMATICALLY
+    be upgraded to a new version once the new version is installed.
+    Again, DO NOT change the runtime version.
+
+
+ -----------------------------------------
+  A p p e n d i x  B  -  NUTS Color Codes
+ -----------------------------------------
+ 
+Color commands can be placed in any string in the program that is used
+eventually by write_user() and also in any file that is paged by the more()
+function (except MOTD1 as colors can't be used here in case the users
+terminal doesn't support them). The commands get translated into ANSI codes
+by these 2 functions before the strings are sent out. Bear in mind that if
+you're on a black and white or green screen terminal all you'll get is
+various shades of grey/green instead of colors (if you get anything at all).
+All the commands start with a ~ and are the following:
+
+---COLOR CONTROLS---
+RS - reset terminal to default color status
+RV - reverse video 
+OL - bold
+LI - blink/flash text (only the text flashes , not the background color). 
+     This won't work on all terminals , some xterms simply set it to bold.
+UL - underline text, this doesn't work on all terminals.
+
+---FOREGROUND COLORS---
+FK - black
+FR - red
+FG - green
+FY - yellow (though it looks an orangey brown on some systems)
+FB - blue
+FM - magenta/purple
+FT - turquoise/bright blue
+FW - white
+
+---BACKGROUND COLORS---
+BK - black
+BR - red
+BG - green
+BY - yellow
+BB - blue
+BM - magenta
+BT - turqouise
+BW - white
+
+So if for instance you wanted some flashing magenta "hello" on a green
+background followed by a non-flashing blue "world" on a black background
+you would do the following:
+
+write_user(user,"~FM~LI~BGhello ~RS~FBworld\n");
+
+Notice the use of the reset (RS) to reset the background to black and
+the text to non-flashing (assuming you're using a white text on black
+screen VDU). Also note that an automatic reset is sent whenever a \0
+or \n is encountered in a string so the colors set to do not carry
+over to the next line.
+
+Color commands can be used within the talker as a user as well as in
+the code so for instance you can embed them in anything you say or
+shout , in your description , board messages , mail etc ... so to use
+the above example as some mail you would enter...
+
+.smail fred ~FM~LI~BGhello ~RS~FBworld
+
+Please note however that the color commands contribute to the length of
+the string so for instance if you put in lots of color in your description
+you may find that it tells you that its too long even if it seems to you
+that the actual text is rather short.
+
+You can print out color commands as themselves by prepending them with a
+backslash '\'. For example:
+
+write_user(user,"\~FMtest\n");
+
+This would print out '~FMtest' to the screen minus the slash. The slash
+can also be used online in the talker commands.
+
+*** REMEMBER ***
+
+Not everyones terminal supports ANSI color codes. It'll either ignore
+them or will produce some very strange effects. Bear this in mind if you
+decide to set the user color default to ON.
+

@@ -1,0 +1,11 @@
+Usage:  ~FG.arrest <user>
+
+This command will move a user to the room specified as JAIL in the
+config file and remove all command privlidges.  The *only* action
+available to the user will be .say.  This setting is saved with the
+user's details, so when they re-login they will automatically be
+placed back in jail until released. NOTE:  This function will be
+disabled if there are no rooms configured as type JAIL.
+
+This command is level-specific, meaning that the user must be
+released by the same or higher level that arrested him/her.

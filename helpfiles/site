@@ -1,10 +1,5 @@
-
-* site *
-
-Usage: site <user>
+Usage:  ~FG.site <user>
 
 This shows you the internet address and local port from which the given user 
-is logging in from.
-
-See: people
-
+is logging in from.  It also shows the last site a user was logged in
+from if the user is not currently logged in.

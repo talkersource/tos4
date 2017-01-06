@@ -1,0 +1,21 @@
+-------------------------------------------------------------------
+TalkerOS Supplemental Help Topic:  NEW USERS
+-------------------------------------------------------------------
+Welcome!  To get started on this talker, be sure you do the
+following items in order:
+
+       * Familiarize yourself with the ~FG.help~RS system.
+       * Read the ~FG.rules~RS of this talker.
+       * Use ~FG.accreq <your email>~RS where <your email>
+         is your valid email address to get an account.
+
+Then please do the following items (any order):
+
+       * Set a ~FG.desc~RS (description) of yourself that will
+         follow your name in the .who list.
+       * Use ~FG.set~RS to set details about yourself, such as
+         your email, your homepage, your age and gender.
+       * Use ~FG.profile~RS to enter up to 15 lines of anything
+         about yourself.  It shows up in .examine
+       * Set ~FG.inphr~RS and ~FG.outphr~RS if you'd like to have
+         text following your name when you enter/leave a room.

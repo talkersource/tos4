@@ -1,0 +1,9 @@
+Usage:  ~FG.paudio <URL>
+
+This command displays a 'recommendation' to other users to view
+the audio at the URL specified.  The URL *MUST* begin with
+http:// and end in either .wav or .mid
+
+Users who connect with the Pueblo telnet client have the option
+to hear the audio 'in' the talker screen if the talker is ENABLED
+for pueblo-enhancement.

@@ -1,0 +1,165 @@
+T a l k e r O S    version 4.03, revision A                    Public Release
+=============================================================================
+                      Proprietary Firewall Setup Manual
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Provided for the setup and modification of the system security settings.
+=============================================================================                        
+
+        TABLE OF CONTENTS
+        ~~~~~~~~~~~~~~~~~
+                1.      What does the firewall do?
+                2.      About Firewall Violations
+                3.      Making Modifications
+                          a) Specific Details
+
+
+WHAT DOES THE FIREWALL DO?
+
+        The firewall is a very complex security system for your talker.
+        While it is not 100% secure, it can be one of the most valuable
+        tools you have against hacking at your talker.  The firewall,
+        patterned after server firewalls, will check your administrators
+        to make sure they are who they say they are.  It does this by
+        checking the admin's name, rank, and site.  If everything matches
+        with the stored information, the admin is allowed to continue.
+        If there is a mismatch, certain actions can be performed based on
+        the system settings.
+
+        The TalkerOS firewall will check every user at a certain level
+        and above to make sure they are authorized for an admin level.
+        Or, it can check to make sure that the site is authorized. Or,
+        it can check to make sure both the name AND site match.  The
+        firewall can check up to two sites per user.  This allows each
+        user the ablility to have an 'alternate' site and still get in
+        without any difficulty.
+
+FIREWALL VIOLATIONS
+
+        When a user who is logging in does not comply with all the
+        requirements set in the firewall, a 'Firewall Violation' is
+        triggered.  The actions that are then performed depend on the
+        settings of the firewall.  The firewall can temporarily demote or
+        permanently demote the user.  It can also kill the user if it
+        is set to do so.  These settings, as well as what level to demote
+        to, are set individually for both a name/level mismatch and a
+        user/site mismatch.
+
+MAKING MODIFICATIONS
+
+        For security purposes, it is suggested that the SECURITY.H file
+        (which contains the firewall information) be kept on a computer
+        other than the talker's server.  This means that it would have
+        to be uploaded whenever changes are made to the talker, but it
+        would keep any hackers from being able to read or alter the
+        security file.  This file is the heart of the firewall, and it
+        not only contains the information about authorized users, but
+        it also controls the way the firewall operates.  This file
+        MUST be present in order to compile the talker, and the talker
+        MUST be recompiled whenever changes are made to the SECURITY.H file.
+
+-------------------------------------------------------
+ Specific Details About Modifying Each Security Option
+-------------------------------------------------------
+
+check_at_lev    -  This sets the level that the firewall begins checking
+                   when users login.  The level is set using the level
+                   number (see .ranks to find the number for the level
+                   you want).  Users who are below this level are NOT
+                   checked by the firewall, and there is no security for
+                   those levels.
+
+revert_level    -  This sets the numeric (see .ranks) level that a user
+                   will be demoted (or temp-demoted) to if his/her name
+                   is not authorized for the CHECK_AT_LEV level.
+
+revert_site     -  This sets the numeric level that a user will be demoted
+                   (or temp-demoted) to if his/her name does not match one
+                   of the sites (up to 2 per user) that has been entered
+                   for that username.
+
+allow_local     -  This sets whether the talker will allow anyone to
+                   connect from the local server (localhost).  This is
+                   universal for ANY user on ANY port (other than LinkPort),
+                   and check_at_lev does not apply.  Set this value to
+                   one (1) if you wish to allow localhost logins, or to
+                   zero (0) if you do not want anyone to be able to.
+
+allow_altsite   -  This sets the ALT_SITE mode of the firewall.  If the
+                   setting is zero (0), each user in the firewall has only
+                   one site that they may connect from without invoking
+                   a firewall violation.  If it is set to one (1), then
+                   each user in the firewall may have up to two sites,
+                   a main site and an alternate site.
+
+allow_namefail  -  This sets whether you want to require users at the
+                   CHECK_AT_LEV level to have their username listed in
+                   the firewall.  If this is set to one (1), then each
+                   user at or above CHECK_AT_LEV *must* have his/her name
+                   installed in the firewall.  If it is set to zero (0),
+                   then the firewall does not check the username.
+
+allow_sitefail  -  This sets whether you want to require users in the
+                   firewall to be connected from one of the sites listed
+                   for that particular user.  If set to one (1), then
+                   the user's site/IP must match one of the sites that
+                   is listed for that user in the firewall.  If set to
+                   zero (0), then the firewall does not check sites.
+
+        IMPORTANT NOTE:  If *both* allow_namefail and allow_sitefail
+        ~~~~~~~~~~~~~~   are set to 0, the firewall will be turned 'off'
+                         and there will be no security provided.
+
+namefail_temp   -  This selects whether you wish to have a user permanently
+                   or temporarily demoted when there is a NAME violation.
+                   If set to one(1), then it will be a temporary demotion.
+                   If set to zero(0), then it will be permanent.
+
+sitefail_temp   -  This selects whether you wish to have a user permanently
+                   or temporarily demoted when there is a SITE violation.
+                   If set to one(1), then it will be a temporary demotion.
+                   If set to zero(0), then it will be permanent.
+
+namefail_kill   -  This selects whether you wish to have the user auto-
+                   matically KILLED when there is a NAME violation.  If
+                   set to one(1), the user will be killed.  If set to
+                   zero(0), the user will be allowed to stay connected.
+
+sitefail_kill   -  This selects whether you wish to have the user auto-
+                   matically KILLED when there is a SITE violation.  If
+                   set to one(1), the user will be killed.  If set to
+                   zero(0), the user will be allowed to stay connected.
+
+allow_wiz_on_main - This selects whether you wish to allow users that are
+                    at or above CHECK_AT_LEV to login on the Main Port.
+                    If set to one(1), then wizards can login on either the
+                    MainPort or the WizPort.  If set to zero(0), wizards
+                    MUST login on the WizPort.
+
+total_fwusers   -  This sets the total number of administrators listed
+                   in the firewall.  It is VERY important that this
+                   number EXACTLY MATCHES the number of users listed.
+
+*fire_name[]    -  This is the array list of the usernames of every
+                   authorized person in the firewall.  Unless
+                   allow_namefail is off, each user at or above the
+                   CHECK_AT_LEV must be listed here.  The username
+                   must be listed EXACTLY as it appears, including
+                   *all* capital letters.
+
+*fire_main[]    -  This is the main array list of the sites of every
+                   authorized person in the firewall.  Unless
+                   allow_sitefail is off, there MUST be a site listed
+                   for EVERY user listed in *fire_name[]. The site can
+                   be a DNS or a numeric IP.  Be careful with users who
+                   have dynamic IPs.     
+
+*fire_alt[]     -  This is the alternate array list of the sites of
+                   every authorized person in the firewall.  Unless
+                   allow_altsite is off, there MUST be a site listed
+                   for EVERY user listed in *fire_name[]. The site can
+                   be a DNS or a numeric IP.  Be careful with users who
+                   have dynamic IPs.  If a user does NOT have an
+                   alternate site, but you have allow_altsite on, there
+                   MUST be something entered as the alternate site.
+                   A recommended placeholder is "(none)".
+

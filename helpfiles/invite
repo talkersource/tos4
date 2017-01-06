@@ -1,10 +1,4 @@
+Usage: ~FG.invite <user>
 
-* invite *
-
-Usage: invite <user>
-
-This will allow a user of your choice to be invited into a private room
-which you are in.
-
-See: public, private, letmein
-
+This will allow a user of your choice to be invited into
+the private room you are in.

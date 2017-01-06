@@ -1,0 +1,7 @@
+Usage:  ~FG.release <user>
+
+This command reverses the actions done by the .arrest command
+and moves the user back into the main room.
+
+This command is level-specific, meaning that a user must be
+released by the same or higher level that arrested him/her.

@@ -1,0 +1,6 @@
+Usage: ~FG .flc <user>
+
+This command will force all uppercase letters of a user to become
+lowercase.  It is useful when a user insists on typing everything
+in ALL CAPS and it becomes annoying.  It is released by using the
+command again.

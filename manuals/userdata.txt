@@ -1,0 +1,42 @@
+T a l k e r O S   version 4.03 public release
+============================================================================
+User file format and layout guide.
+
+NOTE:  This guide is applicable ONLY to version 4.02 or 4.03 with a
+       RUNTIME version of "402" or "403" respectively.  Any other
+       version(s) may not comply and/or run with this format.
+============================================================================
+
+<runtime version>
+<password>
+<last login> <total time> <last length> <mail read time> <date created>
+<level> <muzzled> <arrested> <possessed> <can edit room descriptions>
+<prompt> <charecho> <mode> <color> <wizduty> <visibility>
+<gender> <age> <private stats> <audio prompt> <audio pager> <prompt gender>
+<last site connected from>
+<description>
+<in phrase>
+<out phrase>
+<personal room topic>
+<email address>
+<website address>
+
+============================================================================
+
+Manual modification of the userfiles is not recommended.  However, it
+may become necessary, so this guide is provided.  Also the ability to
+edit regular room descriptions must be set MANUALLY from the shell.
+Find the <can edit room descriptions> option and change from 0 to 1
+to allow someone this capability.
+
+    VERY IMPORTANT!!!
+    -----------------
+    NEVER CHANGE the runtime version that is written on the first
+    line of each userfile. This number is used by the talker to
+    determine whether the userfile is compatible or not.  If it is
+    altered, a segmentation fault may occur.  Or the user might
+    not be allowed to login.  Old userfiles will AUTOMATICALLY
+    be upgraded to a new version once the new version is installed.
+    Again, DO NOT change the runtime version.
+
+

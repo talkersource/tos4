@@ -1,0 +1,13 @@
+Usage: set <http/email/gender/age/private> <option>
+
+This command will set statistics about yourself.  These can be viewed
+by yourself and other users by using the .examine and .status commands.
+Using .set private will toggle your email and homepage setting private
+or public.  When public, anyone can see them in .status.  When private,
+only yourself and administrators can view the information.
+
+        .set http <your homepage address>
+        .set email <your email address>
+        .set gender <none/male/female>
+        .set age <1-999>
+        .set private

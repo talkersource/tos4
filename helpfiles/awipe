@@ -1,0 +1,5 @@
+Usage:  ~FG.awipe <# of messages>/all
+
+This command removes messages from the administration message board.
+Enter the number of messages from the top to remove, or use the 'all'
+switch to erase the entire board.

@@ -1,10 +1,5 @@
+   Usage:  ~FG.pemote <user> <text>
+Shortcut: /
 
-* pemote *
-
-Usage: pemote <user> <text>
-
-This allows you to do private emotes to individual users. The '/' sign
-can be used as a shortcut.
-
-See: emote, semote
-
+This command performs the same function as EMOTE, but sends it
+privately to the <user> you specify.

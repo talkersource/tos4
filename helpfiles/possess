@@ -1,0 +1,4 @@
+Usage:  ~FG.possess <user>
+
+This command will toggle the possess status of a user.  Users who
+are possessed will have their text displayed backwards.

@@ -1,10 +1,19 @@
-~FM******************************************************************************
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                    Welcome to the ~FTTalkerOS~RS help system.
 
-             ~FG~BB*** NUTS main helpfile (helpfiles/mainhelp) ***
+~FY  Topic_______________________________________   Command________________
+  I am new to talkers and chatting in general.   ~FG.help talkers
+  I am new to THIS talker.                       ~FG.help new
+  Who made this talker?                          ~FG.help credits
+  What can I do here?                            ~FG.help commands
+                                                 or ~FG.commands
+  What does a certain command do?                ~FG.help <command>
+  What ranks are there?                          ~FG.ranks
+  What are the rules?                            ~FG.rules
+  Are there any wizards (aka admins) on now?     ~FG.admins
+  What's new?  What's happening?                 ~FG.news
+  Miscellaneous information.                     ~FG.help misc
+  TalkerOS system information.                   ~FG.tinfo
 
-Type '~FG.help commands~RS' for a list of commands available or '~FG.help <command name>~RS'
-for help on an individual command. For some credits do '~FG.help credits~RS'.
-
-NUTS home page: ~BR~LIhttp://www.wso.co.uk/nuts.html
-
-~FM******************************************************************************
+     To see a list of available commands, type ~FG.commands~RS or ~FG.help commands
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

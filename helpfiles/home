@@ -1,8 +1,2 @@
-
-* home *
-
-If you are a rmote site this will bring you back to your home site without
-you having to wander back to the gateway. You will be placed in the room
-on your home site that is linked to the remote service which you were just
-on.
-
+When you are across a netlink, this command will return you
+to your original (home) talker immediately.

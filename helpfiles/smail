@@ -1,10 +1,6 @@
+Usage:  ~FG.smail <user>[@<service>] <message>
 
-* smail *
-
-Usage: smail <user> or smail <user>@<service>
-
-You can send mail to a remote service/talker if your talker is currently
-connected to it.
-
-See: rmail, dmail, from
-
+This sends your <message> to another user's mailbox.
+To send mail to another talker that is CURRENTLY netlinked,
+follow the username with @<service> with NO SPACE.  If you
+omit <message> you will enter the editor for your message.

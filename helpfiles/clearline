@@ -1,7 +1,4 @@
-
-* clearline *
-
-Usage: clearline <line number>
+Usage:  ~FG.clearline <line number>
 
 This allows you to clear a line that is hung though this can only be
 done for users who are attempting to login. Since the server automatically

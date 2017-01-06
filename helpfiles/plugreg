@@ -1,0 +1,4 @@
+Usage:  ~FG.plugreg
+
+This displays the information stored in the TalkerOS Plugin Registry.
+Data includes the plugin location, ID, name, version, and author.

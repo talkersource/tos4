@@ -1,0 +1,171 @@
+T a l k e r O S    version 4.03, revision A                    Public Release
+=============================================================================
+                   TalkerBOT version 2.3 User & Setup Guide
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Provided for the use of, setup of, and adding triggers to the TalkerBOT.
+=============================================================================
+
+        TABLE OF CONTENTS
+
+                1.  Setting Up the Default Information
+                2.  Setting Up the BOTFILES directory
+                3.  Adding Responses
+                4.  Operating the Online Bot
+
+
+
+SETTING UP THE DEFAULT INFORMATION
+
+        The default and critical information about your TalkerBOT
+        setup is located at the bottom of the TOS4SETUP.H file.
+        These settings include the default bot name, the bot's
+        trigger words, and the filename for each trigger.
+
+   *BOT_def_name        - This sets the default username for the main
+                          bot.  Since version 2.1, the bot code has
+                          supported having multiple bots to choose from.
+                          This will specify which one to load when a
+                          name isn't given.  The first letter of the
+                          bot's username MUST be capitalized.
+
+   *BOT_triggers[]      - This is an array list of all the trigger words
+                          that any of your talker's bots will respond
+                          to.  If you modify this list, your talker will
+                          have to be recompiled and rebooted before the
+                          changes will take effect.  It is VERY IMPORTANT
+                          that a '*' be the last item in this list.
+
+   *BOT_trigger_files[] - This is an array list that contains the
+                          filenames for each trigger listed in
+                          *BOT_triggers[].  Order is important.  Each
+                          trigger needs a filename listed for it.
+                          There also MUST be a filename listed in the
+                          same place as the '*' in the trigger array.
+                          This particular file will be the response file
+                          when someone says the bot's name, but does
+                          not say a trigger.  THERE *MUST* BE A FILE
+                          FOR EACH TRIGGER!
+
+
+SETTING UP THE BOTFILES DIRECTORY
+
+        There are 4 parts to the BOTFILES directory.
+
+                - Bot information files.
+                - Default trigger files.
+                - Individual bot directories.
+                - Individual bot trigger files.
+
+        BOT INFORMATION FILES are used by the talker to determine which
+        users are 'normal' and which are 'bots.'  When a bot is created
+        using the .BOT CREATE command, the talker automatically creates
+        a bot information file.  This file tells the talker that when
+        someone uses .BOT LOAD, that this user is a bot.  When someone
+        uses the .BOT DELETE command, the talker will automatically
+        delete all normal userfiles and the bot information file for that
+        particular bot.  In normal operation, it is NOT necessary to
+        alter, create, or delete bot information files manually.
+
+        DEFAULT TRIGGER FILES contain the default responses to each
+        trigger.  The filenames defined in the .H file have .T added
+        on to them--a trigger response filename would look like:
+
+                Name entered in TOS4SETUP.H:  hello
+                            Actual filename:  hello.T
+
+     (See ADDING RESPONSES below for information on the response files.)
+
+        INDIVIDUAL BOT DIRECTORIES are used to separate individual
+        response files for each bot.  Version 2.3 of the bot code
+        supports multiple bots. In order to establish different
+        personalities for each bot, it is usually necessary to create
+        different response files for many of the triggers for each
+        bot.
+
+                         Specific bot name:  Robot
+                     Default bot directory:  tos4/botfiles/
+           Specific bot response directory:  tos4/botfiles/Robot/
+
+
+        INDIVIDUAL TRIGGER FILES are exactly the same as the default
+        trigger files, but they are contained in the specific
+        directory for that bot.  These are used to give each bot a
+        different personality.  For example...
+
+            Default directory: tos4/botfiles/
+                
+                     Bot name: Cop
+                Bot directory: tos4/botfiles/Cop/
+
+                     Bot name: Robber
+                Bot directory: tos4/botfiles/Robber/
+
+        You would naturally want these two bots to act and respond
+        a bit differently from each other.  So the trigger files that
+        are placed in the specific directories will be executed.  That
+        way, Cop can be polite, and Robber can steal your wallet.  Also,
+        if a specific response file (or the entire directory) cannot
+        be found, the default files in the default directory is used.
+
+
+ADDING RESPONSES to the TalkerBOT
+
+        Each trigger must have an associated file.  Inside this file
+        are two types of information:
+
+                - The number of total RESPONSES in that file. (1st line)
+                - Response codes. (remaining lines)
+
+        There MUST be a number on the FIRST line of the file.  This number
+        sets the total number of lines FOLLOWING the first line.  Do NOT
+        leave blank lines in a response file.  Example:
+
+                line 1: 3
+                line 2: .hello %s!
+                line 3: !Look!  %s is here!
+                line 4: ,Did %s just come in?
+
+        This would tell the talker there are a total of 3 responses to
+        follow, and then the responses will be listed.  The talker will
+        choose a random line to respond with.
+
+    IMPORTANT:  The number on the first line MUST NOT be larger than the
+                total number of responses, and there MUST NOT be any
+                blank lines.  This may be different from other bot systems.
+
+        Each response line BEGINS AT THE FAR LEFT MARGIN.  The first
+        character of each line is a 'code' that tells the talker whether
+        you wish the bot to SAY, SHOUT, THINK, or EMOTE the trigger and
+        the first character will NOT be seen--it will be removed later.
+
+           . = say         ; = emote       ! = shout       , = think
+
+        In addition, each response may have UP TO ONE 'code' to determine
+        where the user's name is placed.  This is not required, but there
+        can NOT be more than one.  The symbol is '%s'.  Wherever the
+        symbol is placed will determine the insert point.  It *is*
+        possible to have a trigger without a name placeholder.  It is NOT
+        necessary to append a '\n' to the end of each line as this will
+        be done automatically by the talker.
+
+
+OPERATING THE ONLINE BOT
+
+        All bot functions are controlled by the .bot command.
+
+                Syntax:   .bot [<command>] [<parameters>]
+
+        Using the .bot command by itself will list out all available
+        bot commands.  Some bot commands require parameters to follow
+        them, others do not.  Most bot action commands such as SAY,
+        EMOTE, and SHOUT are self-explanitory, so only the specific
+        ones will be listed here.
+
+        HELP    - This will list basic operation instructions.
+        CREATE  - This will create a new bot.
+                  This requires parameter:  <NewBotName>
+        LOAD    - This will load the default bot, or it will load
+                  a specific bot if the <BotName> parameter is used.
+        UNLOAD  - This will unload the current bot.
+        DELETE  - This will delete the bot named by <BotName>
+        LTRIG   - This will display the current trigger list.

@@ -1,0 +1,38 @@
+ColorCode INDEX
+---------------------------------------------------------------------------
+Control tags...
+
+  \~RS : Rest terminal to default state
+  \~RV : ~RVReverse video
+  \~OL : ~OLBold
+  \~LI : ~LIBlink/flash text. This only works on some terminals, others may
+         ~LIsimply display it as bold.
+  \~UL : ~ULUnderline text. As with blink this doesn't work on all terminals,
+	 ~ULsome just display it as bold.
+
+Foreground color tags...
+
+  \~FK : Foreground black
+  \~FM : ~FMMagenta/purple
+  \~FR : ~FRRed
+  \~FY : ~FYYellow/orange
+  \~FG : ~FGGreen
+  \~FB : ~FBBlue
+  \~FT : ~FTTurquoise/bright blue
+  \~FW : White
+
+Background color tags...
+
+  \~BK : Background black
+  \~BM : ~BMMagenta/purple
+  \~BR : ~BRRed
+  \~BY : ~BYYellow/orange
+  \~BG : ~BGGreen
+  \~BB : ~BBBlue
+  \~BT : ~BTTurquoise/bright blue
+  \~BW : White
+
+So this: "\~FG\~BB\~LIhello world" would produce ~FG~BB~LIhello world
+
+To display the color tags as themselves without them producing a color
+prepend the ~ with a \ , eg \\~FG

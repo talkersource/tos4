@@ -1,0 +1,9 @@
+Usage:  ~FG.alias <nickname>
+
+This command will set an alias for yourself that is active for the
+current session only.  Other users can use your alias just like your
+user name in commands.  This is helpful if your name is similar to
+another user's name, or your name is extra-long or hard to type. You
+may NOT set the alias to an existing user's name or an alias that is
+already in use.  NOTE: If a new user is created and its name is the
+same as your alias, your alias will be deactivated.

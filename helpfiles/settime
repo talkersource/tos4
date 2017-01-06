@@ -1,0 +1,5 @@
+Usage:  ~FG.settime <user> <days> <hours> <minutes>
+
+This command resets a user's total time to a new value.  The user
+must be logged off before this command can be used.  Mail will be
+sent to the user notifying him/her of the change.

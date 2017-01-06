@@ -1,10 +1,4 @@
+Usage:  ~FG.promote <user>
 
-* promote *
-
-Usage: promote <user>
-
-This promotes a user to the next level up. You can only promote a user of
-a lower level than yourself up to your own level.
-
-See: demote
-
+This promotes a user to the next level up. You can only promote
+a user of a lower level than yourself up to your own level.

@@ -1,0 +1,4 @@
+Usage:  ~FG.waitfor <user>
+
+This command will allow you to "wait" for a user to log-in.  When
+the user enters, both will be paged with a message displayed.

@@ -1,0 +1,6 @@
+Usage:  ~FG.bot <bot_command> [<parameters>]
+
+This command controls the TalkerBOT and its functions.  Use
+this command and a function from the list to control the bot.
+Some bot commands require extra parameters, some do not.  For
+a list of commands, omit <bot_command> and <parameters>.

@@ -1,9 +1,11 @@
+TalkerOS 4.02		Setup Map
 
-*** A somewhat uninspired map ***
+	This is a very simple map.  Edit the file
+	./datafiles/mapfile and create your own
+	when you set up your rooms.
 
-                  lounge
-                     |
-drive - hallway - corridor
-           |
-        wizroom
 
+    main_room ---- second_room
+	   |      /
+	   |     /
+          wizards --- jail 

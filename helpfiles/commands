@@ -1,0 +1,13 @@
+Usage:  ~FG.commands [<startLevel>] [<endLevel>/only]
+
+This will list out the commands that you have access to.
+You may specify a <startLevel> and an <endLevel> only if
+the following conditions are met:
+
+        1)  You are at or below both levels.
+        2)  <startLevel> is lower than <endLevel>
+
+Using these options will list only the commands at and
+between these levels.  You may also specify the "only"
+switch for the <endLevel> if you only want to display
+the commands for the <startLevel>.

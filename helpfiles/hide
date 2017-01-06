@@ -1,0 +1,6 @@
+Usage:  ~FG.hide [<user>]
+
+This will hide or unhide you or another user.  When hidden, users below
+your level will not see you in the .who, .people, or .look lists.  Also,
+you will not appear to be logged in in .status or .examine.  If the <user>
+option is included, the user named will be toggled visible or invisible.

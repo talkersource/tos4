@@ -1,9 +1,4 @@
+   Usage: ~FG.shout <message>
+Shortcut: !
 
-* shout *
-
-Usage: shout <message>
-
-This allows you to "shout" to the whole talker. Shortcut is '!'.
-
-See: say, tell
-
+This command "shouts" your message to every room in the talker.

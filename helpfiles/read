@@ -1,10 +1,5 @@
+Usage:  ~FG.read [<room>]
 
-* read *
-
-usage: read [<room>]
-
-This displays the message board of the given room. If no room is given it
-defaults to your current room.
-
-See: write, search, wipe
-
+This command displays any messages that are on the message board
+in the <room> specified.  If <room> is omitted, it reads the board
+of the room you are in.

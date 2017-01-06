@@ -1,10 +1,19 @@
+Usage:  ~FG.ban site/user/new <site/user name>
 
-* ban *
+This command places a "ban" on a user and/or site.  The different
+types are as follows:
 
-Usage: ban site/user <site/user name>
+        SITE - This will immediately disconnect anyone who attempts
+               to connect from the site specified.  It can be in
+               numeric IP or alphanumeric DNS form.
 
-This command will ban either a site or a user, the names of which are written
-to the files in the SITEBAN and USERBAN macros.
+        USER - This will disconnect anyone who attempts to login
+               with the username that has been banned.  Normally
+               the user must be created first before it can be
+               banned, but names can be added manually from the shell.
 
-See: unban, listbans
-
+         NEW - This works in the same way as SITE, but only disconnects
+               the user if the person attempts to make a new account.
+               This is good when you have users from a site that you
+               do not want to lock out, but also have people from the
+               same site who you don't want making an account.

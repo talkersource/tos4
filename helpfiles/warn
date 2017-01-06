@@ -1,0 +1,5 @@
+Usage:  ~FG.warn <user> <warning text>
+
+This command will warn a user with the text you type.  It is useful
+to warn a user in hopes that he/she will stop behaving badly before
+it is necessary to .possess, .arrest, .kill, or .ban.

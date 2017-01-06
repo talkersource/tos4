@@ -1,6 +1,4 @@
+Usage:  ~FG.status [<user>]
 
-* status *
-
-This shows you all the important stats about your login. Its self 
-explanatory really.
-
+This command lists the status of the logged in <user>.
+If <user> is omitted, your status is displayed.

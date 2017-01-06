@@ -1,0 +1,32 @@
+T a l k e r O S         public release                  version 4.03
+====================================================================
+
+This file is only needed if you are planning to run TalkerOS on a
+Linux box using the Red Hat release of Linux.
+
+The following libraries have conflicts with RedHat:
+
+	stdio.h
+
+The following libraries have been included to patch these problems:
+
+	tos4_stdio.h
+
+To correct the conflict, open the file:  tos403.c
+Find the line that says:  #include <stdio.h>
+Change this linke to:     #include "tos4_stdio.h"
+Save the tos403.c file.
+
+
+Also, some versions of RedHat have an incompatible CRYPT module.
+To fix this problem...
+
+        Instead of using:    cc tos403.c -o tos4
+                     Use:    cc tos403.c -lcrypt -o tos4
+
+
+These are all the RedHat issuses known to me to-date.  I am
+working to correct compatibility issues in version 5.0.
+
+-William Price
+ Update: 21 Apr 1999

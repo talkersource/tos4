@@ -1,0 +1,5 @@
+Usage:  ~FG.to <user> <text>
+
+This command is similar to SAY, but it directs the text
+to a specific user in public.  NOTE: This text is displayed
+in public and is NOT an alternative to .tell.

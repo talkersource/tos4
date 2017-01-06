@@ -1,5 +1,7 @@
+Usage: ~FG.map [<mapnumber>]
 
-* map *
+This displays a mapped layout of the talker's rooms.
 
-This will show a map of the layout of the talker.
-
+Omit <mapnumber> to display the main map or map index.
+If this talker is set up for multiple maps, enter the map number
+you wish to view as <mapnumber>.

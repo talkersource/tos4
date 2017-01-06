@@ -1,0 +1,8 @@
+Toggles the prompt ON or OFF.  
+
+        <00:00, 0:00, Username>    <--- The prompt.
+          (1)   (2)      (3)
+
+        1)  The current time at the talker in 24-hr format.
+        2)  Your total login time in HH:MM format.
+        3)  Your username.

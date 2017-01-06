@@ -1,0 +1,8 @@
+Usage:  ~FG.awrite [<message text>]
+
+This command writes a message onto the exclusive administration
+message board.  Only wizzes can write and read this board.  Many
+uses include posting information about troublemaking users, problems
+in the talker, and other general wiz information.  If you omit the
+<message text> you are taken into the editor in which you may write
+up to 15 lines.

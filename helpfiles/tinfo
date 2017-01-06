@@ -1,0 +1,3 @@
+This will display information that is stored in this talker's
+system information registry.  This includes a sysop name,
+IP/DNS/PORT, serial number, and other information.

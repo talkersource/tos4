@@ -1,7 +1,6 @@
+The 'who' list displays the current time and date as well as
+the following information about every user connected:
 
-* who*
-
-This shows who is logged on. 
-
-See: people
-
+        - The user's NAME and DESCRIPTION
+        - The current ROOM the user is in
+        - The number of minutes the user has been CONNECTED

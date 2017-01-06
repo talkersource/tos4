@@ -1,8 +1,7 @@
+The online help system performs the following functions:
 
-* help *
-
-Usage: help [<command name>/commands/credits]
-
-This shows help for each command as well as showing a complete list of 
-commands and the code credits.
-
+  ~FG.help~RS              - displays a list of main topics
+  ~FG.help credits~RS      - displays this talker's credits
+  ~FG.help credits nuts~RS - displays the NUTS credits
+  ~FG.help commands~RS     - displays the command list (also ~FG.commands~RS)
+  ~FG.help <topic>~RS      - diplays information about <topic>, if found

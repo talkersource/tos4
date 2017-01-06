@@ -1,48 +1,56 @@
 # Main config file.
 
 INIT:
-verification       bloggs456
-mainport           7000 
-wizport            7001
-linkport           7002
-max_users          10
+verification       TalkerOS402_Verify
+mainport           5000
+wizport            5001
+linkport           5002
+max_users          30
 max_clones         3
 heartbeat          2
 login_idle_time    180
-user_idle_time     600
+user_idle_time     1800
+time_out_afks	   YES
 ban_swearing       YES
-auto_connect       YES
+auto_connect       NO
 password_echo      NO
 ignore_sigterm     NO
-allow_caps_in_name YES
+allow_caps_in_name NO
 system_logging     ON
-colour_def         ON
-prompt_def         ON
+colour_def         PROMPT
+prompt_def         OFF
 charecho_def       OFF
 minlogin_level     NONE
-mesg_life          3
+mesg_life          5
 mesg_check_time    01:00
 min_private        2
-ignore_mp_level    WIZ
-rem_user_maxlevel  WIZ
-rem_user_deflevel  USER
-wizport_level      ARCH
-gatecrash_level    ARCH
-time_out_maxlevel  WIZ
+ignore_mp_level    Admin
+rem_user_maxlevel  SuperUser
+rem_user_deflevel  User
+wizport_level      Wizard
+gatecrash_level    SysOp
+time_out_maxlevel  Wizard
 crash_action       REBOOT
 
 ROOMS:
-dr drive    ha        PUB  CONNECT talker2
-ha hallway  dr,co,wz  PUB  
-wz wizroom  ha        PRIV
-co corridor ha,lg     
-lg lounge   co        BOTH ACCEPT
+#id  name		links		type	netlink (accept/connect)
+r1 main_room		sr,wz		PUB	ACCEPT
+sr second_room		r1
+wz wizards		r1,jl,sr	PRIV
+jl jail			r1		JAIL
+
+# Only put PERSONAL rooms below this line. The names don't matter.
+# No more than 10 personal rooms are recommended, but if you find that
+# you're constantly filling them up, go ahead and add more.
+x1 person1  r1        PERSONAL
+x2 person2  r1        PERSONAL
+x3 person3  r1        PERSONAL
+x4 person4  r1        PERSONAL
+x5 person5  r1        PERSONAL
 
 
 # Link to the 2nd talker. You may need to put the machine name rather than
 # localhost here when youre running the 2nd talker on the same machine , it
 # depends on how the /etc/hosts file is set up and also the resolver.
 SITES:
-talker2    localhost 5002    fred123 
-talker2    spirit 5002    fred123 
-
+#TalkerOS	maddhouse.com 9994 	VERIFY_OFF	ALL

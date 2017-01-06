@@ -1,0 +1,6 @@
+Usage:  ~FG.rmdesc [<room>]
+
+This command is mainly for editing your personal room description.
+Up to ten lines of 80 characters each are allowed.  The sysop of the
+talker has the option to let certain users use the <room> option which
+will allow those users to edit room descriptions of regular rooms.

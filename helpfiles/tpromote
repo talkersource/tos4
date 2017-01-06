@@ -1,0 +1,4 @@
+Usage:  ~FG.tpromote <user>
+
+This command temporarily promotes a user to the next higher level.
+The original level is restored when the user logs out.

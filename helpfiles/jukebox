@@ -1,0 +1,8 @@
+Usage:  ~FG.jukebox [<songNumber>]    
+
+This command will play a song on from the jukebox.  Users who are
+connecting with the Pueblo telnet client have the option to listen
+to the audio if the talker is set up for Pueblo enhancement.
+
+( Jukebox for Pueblo v1.0 - TalkerOS Plugin ID 000-02 - by William )
+

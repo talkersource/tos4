@@ -1,13 +1,8 @@
+   Usage: ~FG.emote <text>
+Shortcut: ;
 
-* emote *
+This allows you to express yourself.
 
-Usage: emote <text>
+Example:  A user named "John" who typed:  ~OL.emote is happy~RS   results in:
 
-Emotes allow you to express emotions. A example would be "Fred feels sad".
-If you were logged in as Fred you would enter ".emote feels sad" and your
-user name will be prepended to the front. A semi-colon can be used as a
-short cut for this command so "; feels sad" would have the same affect as
-the above. The result is seen in the room you are currently in.
-
-See: semote, pemote
-
+                             John is happy

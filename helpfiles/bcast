@@ -1,0 +1,3 @@
+Usage:  ~FG.bcast <message>
+
+This broadcasts <message> to every user on the talker.

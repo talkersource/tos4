@@ -1,6 +1,12 @@
+The 'look' display is what is displayed when you first enter a room.
+It gives the room's name, description, and other information:
 
-* look *
+        Exits:  Rooms that are ajoined to the room.
+                You can exit to any room listed in the Exits list.
 
-Shows the description of the current room, who is in it, how many messages
-are on the board and the rooms access.
+  You can see:  Lists all the users that you can see in the room.
 
+       Access:  Shows the access state of the room.
+                FIXED or UNFIXED, PRIVATE or PUBLIC or PERSONAL
+
+        Topic:  Displays the current room topic, if any.

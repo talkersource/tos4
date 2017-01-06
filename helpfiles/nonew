@@ -1,0 +1,4 @@
+This command toggles the allowance of new users on the system.
+It is easier than minlogin, and simply toggles allowing on or off.
+It is useful when a user continues to try to make duplicate accounts.
+The status is temporary and resets when the talker is restarted.

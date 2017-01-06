@@ -1,0 +1,3 @@
+This command will list statistics of the TalkerOS built-in firewall.
+NOTE:  Users who are temporarily promoted will be denied access to this
+       command until they receive a full promotion (for security purposes).

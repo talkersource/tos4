@@ -1,0 +1,85 @@
+morph_user(user)
+UR_OBJECT user;
+{
+UR_OBJECT u,u2;
+char file1[80],file2[80];
+
+if (word_count<3) {
+        write_user(user,"Usage:  .morph <username> off/<newname>\n");
+        return;
+        }
+if (!(u=get_user(word[1]))) {
+        write_user(user,notloggedon);
+        return;
+        }
+if (u->level >= user->level) {
+        write_user(user,"You cannot morph a user of equal or higher rank.\n");
+        return;
+        }
+if (strlen(word[2]) > USER_NAME_LEN) {
+        sprintf(text,"New name is too long.  It must be no more than %d characters.\n",USER_NAME_LEN);
+        write_user(user,text);
+        return;
+        }
+if (strcmp(word[2],"off") {
+        if (u->morph_name==NULL) {
+                write_user(user,"That user is not morphed!\n");
+                return;
+                }
+        // Copy files so the data structure remains intact.
+        sprintf(file1,"%s/%s.D",USERFILES,u->name);
+        sprintf(file2,"%s/%s.D",USERFILES,u->morph_name);
+        rename(file1,file2);
+        sprintf(file1,"%s/%s.P",USERFILES,u->name);
+        sprintf(file2,"%s/%s.P",USERFILES,u->morph_name);
+        rename(file1,file2);
+        sprintf(file1,"%s/%s.M",USERFILES,u->name);
+        sprintf(file2,"%s/%s.M",USERFILES,u->morph_name);
+        rename(file1,file2);
+
+        // Reset morph status.
+        u->name=u->morph_name;
+        u->morph_name='\0';
+
+        sprintf(text,"You have removed %s's morph name.\n",u->name);
+        write_user(user,text);
+        write_user(u,"Your morph name has been removed!  You are back to normal.\n");
+
+        return;
+        }
+
+// Use temporary user to validate name choice so we don't overwrite someone.
+if ((u2=create_user())==NULL) {
+        write_user(user,"ERROR:  Could not create new user object in user_rename_files()!\n");
+        write_syslog("ERROR:  Couldn't create new user object in user_rename_files().\n",0,SYSLOG);
+        return;
+        }
+strcpy(u2->name,word[2]);
+if (load_user_details(u2)) {
+        destruct_user(u2);      destructed=0;
+        write_user(user,"User already exists with selected name.\n");
+        return;
+        }
+// Clear temporary user.
+destruct_user(u2);  destructed=0;
+
+// Copy files so the data structure remains intact.
+sprintf(file1,"%s/%s.D",USERFILES,u->name);
+sprintf(file2,"%s/%s.D",USERFILES,word[2]);
+rename(file1,file2);
+sprintf(file1,"%s/%s.P",USERFILES,u->name);
+sprintf(file2,"%s/%s.P",USERFILES,word[2]);
+rename(file1,file2);
+sprintf(file1,"%s/%s.M",USERFILES,u->name);
+sprintf(file2,"%s/%s.M",USERFILES,word[2]);
+rename(file1,file2);
+
+// Make sure that we don't loose the original name link.
+if (u->morph_name==NULL) u->morph_name=u->name;
+strcpy(u->name,word[2]);
+
+sprintf(text,"You have morphed %s into %s!\n",u->morph_name,u->name);
+write_user(user,text);
+sprintf(text,"You have been MORPHED into '%s'!\n",u->morph_name);
+write_user(u,text);
+}

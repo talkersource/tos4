@@ -1,0 +1,9 @@
+Usage:  ~FG.loadroom <roomname>
+
+This command will load a room into a dynamic room.  If the room
+belongs to a user who is currently logged in, this command will
+be overrided by the user's presence.  It can also load rooms that
+do not belong to any user.  Dynamic room descriptions are stored
+in the USERFILES directory with the name Username.R  NOTE:  Loading
+rooms requires that there is a free dynamic room, and that dynamic
+rooms are allowed.  The room will be destroyed when empty.

@@ -1,0 +1,4 @@
+Usage:  ~FG.secho <text>
+
+This functions the same as .echo, but removes the '-' from before
+your text.

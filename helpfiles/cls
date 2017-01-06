@@ -1,6 +1,1 @@
-
-* cls *
-
-This clears the screen by printing 50 newlines which should be enough for
-even the largest xterms.
-
+This command clears your screen.

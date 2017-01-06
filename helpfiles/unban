@@ -1,9 +1,4 @@
+Usage:  ~FG.unban site/user/new <site/user name>
 
-* unban *
-
-Usage: unban site/user <site/user name>
-
-This will remove a site or user ban if the ban is currently set.
-
-See: ban, listbans
-
+This will remove a SITE, USER, or NEW ban if the ban is currently set.
+See  ~FG.help ban~RS  for more information.

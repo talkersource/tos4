@@ -1,10 +1,4 @@
-
-* write *
-
-Usage: write [<text>]
+Usage:  ~FG.write [<text>]
 
 This writes a message on the board of the room you are in. If you omit the
-test you are put into the line editor to enter your message in that.
-
-See: read, search, wipe
-
+text, you are taken to the editor to enter up to 15 lines.

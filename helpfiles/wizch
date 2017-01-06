@@ -1,0 +1,5 @@
+   Usage:  ~FG.wizch <text>
+Shortcut: ]
+
+This command will display your text to all wizards/admins currently
+logged in.  It will only be displayed to those users who are ON DUTY.

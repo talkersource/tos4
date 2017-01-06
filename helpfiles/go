@@ -1,12 +1,14 @@
+This command has many options... you can:  Move to a different room,
+                                           go to a talker using the netlink.
+                                         & return to the main room.
 
-* go *
+Use ~FG.go~RS by itself to quickly return to the main room from anywhere.
+Use ~FG.go <service> [<remote password>]~RS to go across a netlink.
+Use ~FG.go <room1> <room2> <room3>. . .<room9>~RS to do a multi-move.
 
-Usage: go <room/service> [<password on other talker>]
-
-This command moves you to another room which must be linked to your current
-one (unless you are a wizard or higher). If the talker is linked to another
-you can type the service name to move to the other talker if your password
-is the same on the other talker. If it isn't you must supply it as above.
-
-See: move
-
+Multi-move allows you to move through up to 9 rooms in one command.
+Enter between one and nine room names (separated by spaces).  This allows
+you to skip having to type 9 individual .go commands.  The talker will
+take you to the last room on your list that you can go to.  You may not
+go through private rooms, and each room must be connected to the previous
+one.

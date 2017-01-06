@@ -1,7 +1,5 @@
-
-* revtell *
-
 This will show you the last few tells and pemotes you have recieved.
 
-See: review
-
+This command also stores the most recent private messages that have
+been sent to you while you are AFK.  The talker will announce to you
+if you have any private messages when you return from AFK.

@@ -1,0 +1,5 @@
+Usage: page <user>
+
+This sends a message and a beeping noise to the user's
+terminal... hopefully attracting his/her attention.
+

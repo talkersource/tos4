@@ -1,0 +1,29 @@
+Usage:  ~FG.debugger <module> [<parameters>]
+
+TalkerOS includes a rarely-used, but nice feature called the Debugger.
+Througout different versions of the talker software, many debugger
+'modules' will be included.  Each module performs a different function.
+To use a module, enter its name as <module> and any <parameters> it may
+or may not require.
+
+This version of TalkerOS (v4.03) includes:  3 debugger modules
+                                            1 hidden module
+
+        (1) - 'command' module : This module will list all commands in
+                                 the system by their virtual 'memory'
+                                 location.  This is helpful when attempt-
+                                 ing to install new plugins.
+
+        (2) - 'input' module   : This module will copy the current user
+                                 and *ALL* inputted text to the SYSLOG.
+                                 This is useful when debugging conflicts
+                                 that arise when modifying the software.
+
+	(3) - 'plugin' module  : This module lists all installed plugins,
+				 their properties, and any/all associated
+				 commands that have been added to the
+				 command 'memory' map.
+
+        The 'hidden' module will record the last user and his/her
+        input when the talker crashes due to error.  This is also
+        useful when conflicts arise after new modifications.

@@ -1,0 +1,3 @@
+Usage:  ~FG.rstat <room>
+
+Displays netlink information about the link in <room>.

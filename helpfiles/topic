@@ -1,0 +1,4 @@
+Usage:  ~FG.topic <text>
+
+This sets the room's topic.  It is displayed in LOOK, or
+if <text> is omitted.

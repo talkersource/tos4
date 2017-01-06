@@ -1,0 +1,5 @@
+Usage:  ~FG.wsuggest <# messages>/all
+
+This command will remove messages from the suggestion board.
+Enter the number of suggestions from the top to remove, or use
+the 'all' switch to erase all suggestions.

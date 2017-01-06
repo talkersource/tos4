@@ -1,9 +1,7 @@
+Usage:  ~FG.accreq <your email address>
 
-* accreq *
-
-Usage: accreq <email address>
-
-This command is for new users who wish to be promoted to level USER. The
-idea is that they give their email address so the sysop can mail them to
-confirm their identity.
-
+This command sends a request to the talker's administrators
+to request an account.  If the email address you specify is not
+valid, or is incorrect, your account may be denied.  You need
+to use this command before you can be promoted above the Newbie
+level.

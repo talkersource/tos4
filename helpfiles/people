@@ -1,7 +1,15 @@
+This shows current and logging-in users, along w/ their stats.
 
-* people *
+~FT  Name        Level     Line Ign Vis Idle Mins  Port  Site/Service
+~FR  William   : Sysop       8   NO YES    0   44  Wiz   localhost
+    (1)        (2)      (3)  (4) (5) (6)  (7)   (8)       (9)
 
-This shows who is logged on and gives various stats for them. 
-
-See: who
-
+ 1) Name         - Username
+ 2) Level        - Actual and/or cloaked level
+ 3) Line         - Network connection to the talker
+ 4) Ignall       - User is Ignoring All (YES/NO)
+ 5) Visible      - User is Visible (YES/NO)
+ 6) Idle Time    - User's time idle (in minutes.)
+ 7) Total Time   - User's total time (in minutes.)
+ 8) Port         - Port the user is connecting to. (Main/Wiz/Link/Sys)
+ 9) Site/Service - User's IP (or Netlink site)

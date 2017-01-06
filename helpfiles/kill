@@ -1,0 +1,4 @@
+Usage:  ~FG.kill <user>
+
+This command will force a user to disconnect from the talker.
+You may not kill a user of equal or higher level than yourself.

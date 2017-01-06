@@ -1,9 +1,3 @@
-
-* disconnect *
-
-Usage: disconnect <room>
+Usage:  ~FG.disconnect <room>
 
 Bring down the netlink in a room.
-
-See: connect
-

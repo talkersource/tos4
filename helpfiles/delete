@@ -1,7 +1,4 @@
-
-* delete *
-
-Usage: delete <user>
+Usage:  ~FGdelete <user>
 
 This will delete a user on the system but they cannot be logged in at the time
 so if someone is annoying you .kill them first *then* delete them. Using this

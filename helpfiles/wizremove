@@ -1,0 +1,8 @@
+Usage:  ~FG.wizremove <user>
+
+This command will remove an administrator at or below your level.
+It will only work for WIZARDS and above, not regular users.  It is
+designed to force a user to log out if he/she is still logged in,
+but doesn't appear to be connected any longer.  The person must be
+idle for LONGER than the regular user timeout setting before they
+can be removed.

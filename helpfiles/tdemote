@@ -1,0 +1,5 @@
+Usage:  ~FG.tdemote <user>
+
+This command temporarily demotes a user to the next lower level.
+The original level is restored when the user logs out.  This is
+normally used to reverse a .tpromote before the user logs out.

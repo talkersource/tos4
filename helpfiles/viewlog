@@ -1,8 +1,10 @@
+Usage: viewlog <sys/user/accreq/firewall> [<lines from the end>]
 
-* viewlog *
+This shows the log files that the talker has recorded.  The whole file
+is displayed unless <lines from the end> is specified.  You must choose
+which log you wish to view:
 
-Usage: viewlog [<lines from the end>]
-
-Views the system log. If lines from the end is specified it only shows the
-last n lines of the log so you don't have to page through the whole thing.
-
+    1) sys      - System log: boots, errors, checks, etc.
+    2) user     -   User log: login/logout, level changes, arrests, etc.
+    3) accreq   - Accout Req: account requests
+    4) firewall -   Firewall: firewall violations and errors.

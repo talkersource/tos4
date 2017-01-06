@@ -1,0 +1,7 @@
+Usage:  ~FG.suggest [<suggestion text>]
+
+This command writes a suggestion to the talker's suggestion board.
+It does not matter where you are in the talker.  Use this just like
+you would for writing message in room, but write meaningful
+suggestions only, please.  If you leave off the suggestion text, you
+will be taken into the editor to write up to 15 lines.

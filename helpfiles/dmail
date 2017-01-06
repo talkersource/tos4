@@ -1,9 +1,4 @@
+Usage:  ~FG.dmail <num>/all
 
-* dmail *
-
-Usage: dmail <amount>/all
-
-Deletes your mail messages from your mailbox.
-
-See: smail, rmail, from
-
+This deletes messages from your mailbox.  Enter <num>
+messages to be deleted, or use "all" to delete all of them.

@@ -1,0 +1,5 @@
+Usage:  ~FG.getout <user>
+
+This command will force a user out of your personal room.  It will
+only force users out if you own the room the user is in.  It will not
+work if the user is in a regular room.

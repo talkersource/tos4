@@ -1,0 +1,44 @@
+
+Wilderland Bill of Rights - aka "The Rules"
+-----------------------------------------------------------------
+ 1) Be nice.            - 'Nuff said.  Just be kind.  If in
+                          doubt, don't.
+
+ 2) No racism/prejudice - Your beleifs may not be the same as
+                          others'.  Please don't make a big deal
+                          over trivial opinions.
+
+ 3) No HEAVY swearing.  - This talker was designed for ALL AGES.
+                          Please control heavy language as it is
+                          impossible to tell someone's real age.
+
+ 4) Obey ALL Admins     - You can type .ranks to display a list.
+                          If someone with an "ADMIN"-type rank
+                          asks you to do something, please do it.
+
+ 5) No excessive idling - Please do not idle for too long.  You
+                          may be killed if you idle too long.  If
+                          you MUST idle, use ~FG.afk~RS so others know.
+
+ 6) No obscene behavior - This includes cybersex, any hints,
+			  references, suggestions, or other
+			  inuendos.  There is ZERO TOLERANCE.
+-----------------------------------------------------------------
+If you are a new user, you may now request an account.
+Use the command '~FG.accreq <your email>~RS' where <your email>
+is replaced by your valid email address.  Invalid or incorrect
+addresses may cause your account to be revoked at a later date.
+
+Once you have an account (aka level 'User') your statistics will
+be saved.  Due to storage limitations, Newbie accounts are NOT
+saved.
+
+Users with an account can modify the following settings:
+
+   ~FG.set~RS(tings)    -  age/gender/email/http/privacy
+   ~FG.desc~RS(ription) -  appends a short description to your name
+   ~FG.profile~RS       -  enter up to 15 lines of a personal profile
+
+Users also get many more commands and possible further promotions.
+For promotions above the 'User' level, please see ~FG.ranks
+-----------------------------------------------------------------

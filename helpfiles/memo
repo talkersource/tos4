@@ -1,0 +1,5 @@
+Usage:  ~FG.memo [<text>]
+
+This command will store a MEMO in your SMAIL mail box.  It is
+the equivalent of sending mail to yourself.  If you omit <text>,
+you will enter the editor to enter up to 15 lines.

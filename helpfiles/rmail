@@ -1,7 +1,5 @@
+This command will display the contents of your mailbox.  Please
+note that this is INTERNAL TALKER MAIL only and is NOT email.
 
-* rmail *
-
-This lists out your mailbox to you.
-
-See: smail, dmail, from
-
+Use ~FG.from~RS to ONLY display a list of the people who have sent
+mail to your mailbox.

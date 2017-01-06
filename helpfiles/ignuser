@@ -1,0 +1,5 @@
+Usage:  ~FG.ignuser <user>/off
+
+This allows you to specifically ignore all posts from ONE
+user at a time.  It is deactivated when the user logs out
+or you use the "off" switch.

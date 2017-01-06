@@ -1,0 +1,9 @@
+Usage:  ~FG.cloak none/<level> [<user>]
+
+This command will falsify your level to other users in .people,
+.status, and .examine.  You may cloak to any level equal or below
+your actual level.  Cloaking has no effect on your actual level and
+is reset when you log out or disable it using the "none" option.
+
+If you specify the <user> option, you can cloak another user of
+lower rank than yourself.

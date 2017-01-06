@@ -1,0 +1,6 @@
+   Usage:  ~FG.wizemote <text>
+Shortcut: [ 
+
+This command works the same as wizch, but puts your text as if
+you were emoting.  Text is displayed only to users who are ON DUTY.
+
